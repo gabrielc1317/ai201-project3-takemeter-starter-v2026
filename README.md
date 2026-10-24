@@ -292,26 +292,28 @@ of next unit's variance. -->
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+|---|---:|---:|---:|---:|---|
+| 1. Overall accuracy | ≥ 0.900 | 0.658 | 0.658 | 0.553 | MISSED |
+| 2. Every label F1 | ≥ 0.850 | 0.250 | 0.154 | 0.154 | MISSED |
+| 3. Largest label share | ≤ 35% | 36.8% | 36.8% | 36.8% | MISSED |
+| 4. Agreement with another labeler | ≥ 90% | 96.7% | 96.7% | 96.7% | MET |
+| 5. Most-confident third accuracy | ≥ 0.950 | 0.750 | 0.917 | 0.833 | MISSED |
+
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | request | discussion | showcase |
+|---|---:|---:|---:|
+| **request** | 2 | 10 | 0 |
+| **discussion** | 0 | 14 | 0 |
+| **showcase** | 2 | 1 | 9 |
 
-**My biggest off-diagonal number, and what it means:**
+**My biggest off-diagonal number, and what it means: The biggest confusion was 10 real request posts being predicted as discussion, while 0 real discussion posts were predicted as request. This shows that the confusion is strongly onesided. The model learned the discussion class much more clearly than the request class and tends to absorb requests into discussion. I cannot tell yet whether this came from inconsistent labeling or from the model failing to learn the boundary.**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
@@ -325,13 +327,16 @@ of next unit's variance. -->
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
+
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.900 | MISSED | Accuracy was 0.658, 0.658, and 0.553. None of the three runs reached the target, and the 0.105 spread also shows that performance changes substantially depending on the split. |
+| 2 | Every label F1 | ≥ 0.850 | MISSED | request was the weakest label in every run, with F1 scores of 0.250, 0.154, and 0.154. The confusion matrix for Seed 42 showed 10 of 12 real request posts being classified as discussion. |
+| 3 | No label exceeds 35% of the dataset | ≤ 35% | MISSED | discussion contains 92 of 250 posts, or 36.8%, which is 1.8 percentage points above the target. |
+| 4 | Agreement with another labeler | ≥ 90% | MET | I agreed with the staff labels on 29 of 30 posts, giving an agreement rate of about 96.7%. |
+| 5 | Most-confident third accuracy | ≥ 0.950 | MISSED | The most-confident third was correct 75.0%, 91.7%, and 83.3% of the time across the three seeds. None reached 95%. |
+
+
 
 **Diagnoses**
 
@@ -343,6 +348,18 @@ of next unit's variance. -->
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+     *Criterion 1 — Overall accuracy:**  
+The biggest cause of the accuracy miss appears to be the model's failure to learn the request versus discussion boundary. In Seed 42, 10 of 12 real request posts were predicted as discussion, while none of the 14 real discussion posts were predicted as request. Accuracy also changed by 0.105 between seeds, which suggests the dataset is small enough for the particular train/test split to have a meaningful effect on performance.
+
+**Criterion 2 — Every label F1:**  
+request is the clearest failure. Its F1 stayed extremely low across all three seeds, so the Seed 42 result was not just an unlucky split. showcase also moved substantially, from 0.857 and 0.870 in the first two seeds to 0.615 in Seed 2024. My 97% staff-set agreement gives little evidence of a broad problem with my ability to consistently apply written labeling rules, although that agreement test used a different taxonomy and therefore cannot prove that every request/discussion label in my own dataset is correct. The evidence points more toward a difficult boundary combined with a relatively small training set.
+
+**Criterion 3 — Dataset balance:**  
+This criterion was missed narrowly: discussion makes up 36.8% of the dataset instead of at most 35%. The original reason for this target still refers to four labels, even though I merged the taxonomy to three labels before training. I am leaving the original target unchanged because it is still measurable; I simply missed it.
+
+
+**Criterion 5 — Confidence:**  
+The model's confidence was not reliable enough to meet the target. The most-confident predictions performed better than the least-confident predictions in Seeds 7 and 2024, but Seed 42 had identical 0.750 accuracy for both groups. Even the best seed only reached 0.917 for the most-confident third, so a high confidence score is not yet strong enough to treat a prediction as reliably correct.
 
 
 
@@ -356,7 +373,7 @@ of next unit's variance. -->
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** _29 / 30 = 97_%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -379,27 +396,18 @@ of next unit's variance. -->
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+> *The post:“Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people.”*
 >
-> *Staff said / I said:*
+> *Staff said / I said: analysis / hot_take*
 >
-> *My call, and why:*
+> *My call, and why: I think the staff is correct. The post gives a comparison between 3 people, same session, different shoes, and finishing within 10 seconds of eachtoher. Since it is using fact based off observation and testing, its not a hot_take but rather a analysis.*
 >
-> *Which pile:*
+> *Which pile: (a) the rule covered it and I applied it loosely*
 
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
 
 **What the pattern in my disagreements tells me:**
 
-
-
+I agreed with the staff on 29 of 30 posts, or 97%. The only disagreement came from applying the analysis rule too narrowly rather than from a missing or ambiguous definition. That suggests I can apply a written taxonomy consistently, but that the difference in complete factual bearing posts and speculative can be strengthened.
 ---
 
 ## The Improvement
