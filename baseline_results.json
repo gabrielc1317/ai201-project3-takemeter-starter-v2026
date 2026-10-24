@@ -1,0 +1,224 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 38,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 38,
+    "accuracy": 0.5526315789473685,
+    "f1_macro": 0.5125822686798296,
+    "per_label": {
+      "discussion": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 14
+      },
+      "request": {
+        "precision": 0.41379310344827586,
+        "recall": 1.0,
+        "f1": 0.5853658536585366,
+        "support": 12
+      },
+      "showcase": {
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "support": 12
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "A couple t-shirt ideas",
+      "gold": "showcase",
+      "predicted": "showcase"
+    },
+    {
+      "text": "Brawlhalla on steam - keeps disconnecting im not sure what they've done to the servers. well its always been like this but i feel like its 4x worst now. im disconnecting every 10-20 minutes",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "Does anyone know all the bow/chakram combos that are true at 6 dex? I'm just trying to see if super dex is worth it for Ransom since I main him.",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "New Legends Sigs (Rant)Anybody else noticed how fucking broken every new legends sigs are, why is brawlhalla doing these things??\nThe sigs are so annoying and hard to dodge, plus they put you in bad position e.g King Zuvas Dsig, What the fuck do you mean he hits you on ground picks you up in the air then throws you under the map \ud83d\ude2d what am I supposed to do with my Fait\u2026",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "All my hate goes to this stupid weapon Screw ts weapon bro fast af and deals massive damage and stupid aah strings man. I'd rather fight 1000 scythe and gauntlets than a single cannon.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Gauntlets Nerfed I keep seeing the devs nerf gauntlets but miss the mark everytime. The true issue with gauntlets is nair, it has no recovery frames and catches multiple dodges. you can Slight, nair and still be safe. Thoughts? am I wrong",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "BAITED!",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Does this count as a clip?",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "Nerf gauntlets Why arent they nerfing gauntlets after them being top 3 most broken weapon in the game for YEARS?\n\nBest weapon in 2s, top 3 weapon at least in 1s and they still want to keep them like that? Like theres no way legends like mordex and wu shang are still this broken after so many years.\n\nI understand that its the most played weapon but is it really fair?",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "When does recovery feel earned instead of free? Getting launched offstage should cost something, but recovering can turn into its own skill check. Sometimes the defender has to make three good decisions just to touch the stage again. Other times it looks like everyone simply gets another chance for free. Is there a particular recovery situation or matchup where that difference is obvious? I'm interested in what the recovering player still has to risk, and what the edge-guarder can actually do about it.",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "Whats the best budget keyboard for brawlhalla? im not sure why im asking this in brawlhalla subreddit but what do yall think the best 20-30 budget keyboard is?",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "cannon and greatsword legend, name: hephaestus , fan made.",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Yumiko In 3D!",
+      "gold": "showcase",
+      "predicted": "showcase"
+    },
+    {
+      "text": "A hought about toxicity I\u2019ve honestly been wondering for a while why the game gives players so much leeway when it comes to being toxic. I\u2019ve heard from quite a few people who eventually quit after years of playing and once loving the game, simply because the constant taunting, sarcastic laughing/crying, and thumbs-down emotes after every match made the experience so miserable that they decided other games were just more fun.\n\nBrawlhalla used to have a massive playerbase, so did it really never occur to the devs that selling emotes specifically designed to annoy, taunt, or make other players feel bad might eventually drive people away? And then there was the irony of making players \u201cagree\u201d to new terms and conditions telling them to be decent and non-toxic in-game, while the game itself basically monetizes the exact behavior they\u2019re supposedly trying to discourage.\n\nThis is absolutely not a rant or me being salty, because I genuinely love the game, and will continue to play. It\u2019s just a thought I wanted to share.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Magyar the apostate challenge. To keep things simple im wondering if anyone has a list of the legends that count for the skin level up challenge. ive tried googling it but i cant find an actual list of legends who work.",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "Let Brawlhalla out of ubisoft's hand. The game feels less responsive than before, effort are put into skins more than actually balance or fix the game, like those freeze on some specifics maps or random crashes when launching ranked games. The game is filled with passive and spammers, really 95% of the community isn\u2019t good at the game, and devs doesn\u2019t wanna do anything for this. Blue Mammoth Games should really just go away from ubisoft.",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "I actually reached for victory from the jaws of defeat",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "2500 Cassidy with the best pattern recognition of all time",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "How do you properly coordinate with your teammate in 2v2s? I've been playing 2v2s with my duo, and one thing we're struggling with is knowing when to help each other out. For example, if my teammate gets caught in a combo, I'll sometimes try to interrupt the enemy, but I end up getting caught myself. Other times, we both chase the same opponent and end up hitting each other. Another problem is that when one of us gets pressured or comboed, we'll sometimes both start moving toward the same side of the map, which makes it easy for the enemies to pressure and hit both of us. Should we be trying to spread out more and approach from different angles, or is there a better way to handle these situations? How do you decide when to help your teammate versus when to focus on your own fight? Also, is it generally better to focus on the same opponent or split up and take separate fights? I'd appreciate hearing how experienced 2v2 players approach these situations.",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "I cant play this game anymore Im just fucking ass bro i just wanna hit dia i dont even have fun playing this game anymore. It still somehow feels like it gets worse every update. Does anyone feel similar and if yes how do i fix that?",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "sig spam/ passive playstyle this game is so bad and unbalanced when it comes to sig spam and passive playstyles, i could hit my opponent to 190 he still doesnt die, me 110 gets knocked across the whole map by some dumbass sig and proceed to lose the game beacuse of that. is it just me or does passive playstyles and sig spammes get way more rewarded then playing the game normally?",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "A ridiculous interaction",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Cassidy (Brawlhalla)",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Any tips for the ending of this combo ?",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "1v1 has become insufferably passive / state of the game. Since the snap dash changes the game has become more and more unfun to watch for 1v1. I also feel like the Dodge changes are now taking full effect with weapons like katars and cannon. Super Stances were a great addition, but imo the game has become more and more reliant on winning neutral and basicly became a neutral game simulator.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "mammoth coins / crossovers does anybody know where i can buy crossovers or mammoth coins for a cheaper price than normal is there a discord server or a link can you guys please let met know i feel like the chair in the queen sized bed room",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "A retired player's old habits die hard.",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Orb is one of the most annoying weapons in brawlhalla Orb is the weapon to play passive as, just waiting your opponent out and the easiest punishes in history considering side air has such a good active airborn threat coverage. let's not forget it's free true combo making it a solid pick in general. Issue is that I never actually fight an aggressive or balanced orb player I seem to only play against people who could genuinely let a round go for 10 minutes",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Spammers Idk if anyone feels the same way, but I HATE those players that spam sig moves and then act like they just destroyed a fleet of aliens trying to take over earth. I think there should be cooldowns on the attacks. I see too many red raptors spam side sig way too much and its ruining my ranked experience. Yall give me your thoughts and opinions.",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "Why is the brawlhalla community notica ly saltier than other fighting games? Brawlhalla by far has the most vitriol filled, salty, and genuinely angry fanbase when compared to basically any other fighting game. I was wondering why that is because some things that we do don't really happen in other communities whose games fit the same criteria.\n\nWe make names for people who play in a style that we don't like, see \"Weapon Hogger\", \"Passive Player\", \"(Sig) Spammer\" etc. . Also interesting is that the game isn't really THAT unbalanced compared to said other fighting games; Street fighter 3rd strike has historically one of the most laughably shitty balancing across characters, imagine if a tournament had 76% lucien players and ulgrim had a ranked winrate of 15%. It is that bad, yet nobody really calls names like \"Yun/Chun li abuser\".\n\nWhen it comes to mechanics, those games have their fair share of bullshit too. Street fighter 6 had its throw loops (in short: when you put your opponent in a place where it makes sense to only block, after which you're able to constantly throw them) but nobody called people out individually and instead focused on getting the game changed to fix the issue.",
+      "gold": "discussion",
+      "predicted": "request"
+    },
+    {
+      "text": "Glory changes Did they change how you gain glory at the end of seasons? For the past to seasons im not getting glory at the end I had 700 wins and reached elo 1766, but didnt gai anything",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "When your opponent throws out the most convenient dodge possible",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "generational lock in",
+      "gold": "showcase",
+      "predicted": "request"
+    },
+    {
+      "text": "Dear brawhalla devs... who should I blame for this? WHO DECIDED THAT WHEN FAITH USES HER ORB D-SIG HER HITBOX SHOULD CHANGE?????? I noticed some hitbox bs in this match (btw, Yumiko player you deserved the 2nd win but this one was debatable. Gg wp anyways) and I had to check. This one was the most bullshity of all in my opnion so I had to check. And here is what happend. When I used my orb d-sig, my hitbox extended ever so slightly up for some stupid reason and I got hit. The same happens with orb n-sig. Like... how does this make any sense? Why?",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "Glory Update is Trash I had almost 350 wins in ranked last season with a peak elo of 2065. I was excited to get some glory to buy the new crystal forged weapons when the season ended. Now that time has come and I got 0 GLORY!?!? I saw somewhere it said that they changed the way you get glory where you get it after each win, but im only getting 4 glory per win. Where is all my glory from last season???",
+      "gold": "request",
+      "predicted": "request"
+    },
+    {
+      "text": "I'm so sick of ranked Every time I play it's the same, you get maybe one round with an actual skilled player and the next it's either a sign snapper or a world class swear. Like, I'm in gold I just want to rank up but I can't because it takes about fifty games to get one elo bar and one game to lose it.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Blasters are ridiculously buffed I don\u2019t remember exactly when it happened, but a few patches ago I suddenly started struggling IMMENSELY against blasters. It was weird because I\u2019d never had this problem before. Then I found out they\u2019d been buffed And EVEN NOW, blasters are harder to fight against than almost any weapon in the game (maybe katars). This weapon is ridiculously buffed and needs to be nerfed into the ground. It has the range of a long-range weapon with the speed of a short-range one. You can barely get close without being punished & once you get hit, the follow ups are ridiculously easy to land I\u2019ve seen enough #BuffHammer \ud83d\udc40\ud83d\udc40",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "What Monsters Fear \u2014 my take on a battle-worn Diana after a brutal sparring match \ud83d\udda4",
+      "gold": "showcase",
+      "predicted": "request"
+    }
+  ]
+}
