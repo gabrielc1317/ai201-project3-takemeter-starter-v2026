@@ -92,7 +92,7 @@ whether you hit them:
 
 
 
-**Why this target: Most labels are easy to differentiate, however with the unsupported_opinion and analysis label, there can be alot of ambiguity, because of this i think another labeler should agree with my classifier about 90% of the time. I feel this is an achievable and reliable number to aim for.**
+**Why this target: Alot of posts are easy to differentiate, however with the discussion and request label, there can be alot of ambiguity, because of this i think another labeler should agree with my classifier about 90% of the time. I feel this is an achievable and reliable number to aim for.**
 
 
 

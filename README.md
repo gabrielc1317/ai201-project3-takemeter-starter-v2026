@@ -218,7 +218,7 @@ Say so plainly — the disclosure is required, not penalised. -->
 **Base model: distilbert-base-uncased**
 
 
-**Settings:Epochs: 3, Learning rate: 2e-5, Batch size: 16, Maximum sequence length: 128, Seed: 42** <!-- epochs, learning rate, batch size, seed -->
+**Settings:Epochs: 3, Learning rate: 2e-5, Batch size: 16, Maximum sequence length: 128, Seed: 42, device: NVIDIA GeForce GTX 1660 SUPER using CUDA, PyTorch: 2.14.1+cu130** <!-- epochs, learning rate, batch size, seed -->
 
 **Anything I changed from the defaults, and why: I kept the provided training hyperparameters unchanged so I could establish a clean first result without tuning the model based on the test set.**
 
