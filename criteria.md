@@ -53,23 +53,22 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+<!-- Atleast 90% of posts are classified correctly. -->
 
 
 
-**Why this target:**
-
+**Why this target: I chose 90% because I feel that 9/10 posts being classified correctly would make the tool pretty reliable. That way when someone is looking for a certain type of post, more then most of time they'll get accompanied posts that fall under that label.**
 
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+<!-- Every label has an F1 of atleast 0.85. -->
 
 
 
-**Why this target:**
+**Why this target: An F1 target of 0.85 for every label ensures that overall accuracy cannot hide poor performance of one category. The classifier should be reliable across all 4 labels rather then carrying a high overall accuracy across easier categories and hiding the poor performance of another.**
 
 
 
@@ -77,11 +76,11 @@ whether you hit them:
 
 ## 3.
 
-<!-- Your criterion. -->
+<!-- No label exceeds 35% of the dataset. -->
 
 
 
-**Why this target:**
+**Why this target: With 4 labels, there should be a good amount of balance, however due to the nature of the posts, some are alot more common then other, to ensure a balance while also keeping the natural variation, no label should exceed 35% of the dataset.**
 
 
 
@@ -89,11 +88,12 @@ whether you hit them:
 
 ## 4.
 
-<!-- Your criterion. -->
+<!-- Agreement with another labeler is atleast 90%. -->
 
 
 
-**Why this target:**
+**Why this target: Most labels are easy to differentiate, however with the unsupported_opinion and analysis label, there can be alot of ambiguity, because of this i think another labeler should agree with my classifier about 90% of the time. I feel this is an achievable and reliable number to aim for.**
+
 
 
 
@@ -101,11 +101,11 @@ whether you hit them:
 
 ## 5.
 
-<!-- Your criterion. -->
+<!-- The most confidence third of the model's predictions should be correct atleast 95% of the time.-->
 
 
 
-**Why this target:**
+**Why this target: Given our aforementioned targets for accuracy and precision, I feel that the most confident portion (third) of the model's predicitions should be correct atleast 95% of the time. When the model is more sure that a post is a certain label (confidence) it should be correct more often then a lower confidence post.**
 
 
 
