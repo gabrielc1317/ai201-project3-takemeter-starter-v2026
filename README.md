@@ -41,7 +41,7 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
+TakeMeter is a classifier for posts from r/Brawlhalla. It sorts posts into three categories: discussion, request, and showcase. The goal is to identify the primary purpose of a post rather than classify it based only on whether it contains a question, opinion, or media.
 
 
 ---
@@ -54,9 +54,9 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `analysis`
+### `discussion`
 
-**Definition: A post whose primary purpose is to evaluate, complain about, advocate for, or make a hot take about the game without enough specific supporting evidence to qualify as analysis**
+**Definition: A post whose primary purpose is to evaluate, complain about, advocate for, or make a hot take about the game regardless of evidence used.**
 
 **Example 1:**
 >The current state of lance genuinely makes me want to cry [RANT]
@@ -148,31 +148,15 @@ Is there any chance it'll return to the shop in the future?
 >Finally reached valhallan but in solo 2v2s
 `Dang this solo q 2v2 is crazy easy to reach valhallan i used to grind so much in 1v1 but barely scratch top 100 dreaming to reach it one day (top 50), and last week i just discovered this mode exist and ALREADY reach valhallan in no time even reaching top 10 in my server. Am I actually better than 99.9% SEA players or nobody actually plays this gamemode😭
 `
-**Example 2:**
->Ranked 1’s Diamond Gameplay
-`I’m the sentinel. Hammer feels so good this patch! (yes i dropped 35 dabloons just for the hammer)
+**Example 2**
+>Bodvar fanart by me
 
-Attached to a gameplay video.
-`
-### `unsupported opinion`
 
-**Definition: A post whose primary purpose is to make an evaluative claim, complaint, hot take, or reccomendation without using specific evidence to suppor the conclusion.**
-
-**Example 1:**
->Oh so NOW you guys think blasters is broken?
-`I’ve been saying this for YEARS, since 2020, IDC how bad you think it was, to me it was mental shattering to play them, back then and of course now.
-
-The spam, god the spam, it’s so hard to get around blasters, and you mf’s are only NOW feeling the pain? Fuck outta here.
-`
-**Example 2:**
->Keep El Gato con Botas away from me
-`Every game I play against that tournament-regular clan I get the life beaten out of me and can't do a thing about it. FFA queue? 1 member shows up and I'm fighting for my life. 1v1 queue? I end up fighting them and end up with carpal tunnel trying to keep up and recover because they never stop moving, their characters' attacks have almost no startup lag to speak of, and I can't even get a hit let alone a combo in edgewise. Just goes to show exactly why even free fighting games lose most of their community after year 1, because everybody learns to win and not to have fun. They're great players, and I don't intend to accuse them of anything but being way too good at fighting games for my filthy casual unc self to do anything against.
-`
 ### The hardest boundary
 
-**Which two labels: analysis and unsupported_opinion**
+**Which two labels: discussion and request**
 
-**The decision rule I used every time: If a post uses at least one specific, checkable or reproducible detail as evidence for its conclusion, such as a mechanic, interaction, patch change, statistic, numerical comparison, or concrete gameplay example, I label it analysis. If the post mainly states an evaluation, complaint, hot take, or recommendation without using specific evidence to support that conclusion, I label it unsupported_opinion. The tone of the post does not determine the label. A post can be angry or explicitly call itself a rant and still be analysis if it supports its argument with concrete evidence.**
+**The decision rule I used every time: If the poster already has a position and the question mainly invites agreement or debate, I label it discussion. If the poster has a genuine unresolved question or need that a response can answer, it'll be labeled request.**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
 
@@ -185,19 +169,19 @@ The spam, god the spam, it’s so hard to get around blasters, and you mf’s ar
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from: r/Brawlhalla (reddit.com/r/brawlhalla)**
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
+**How I labelled them:** I got about 21 posts cold labeled, then after getting samples for each label from the cold labeled ones, i use AI to prelabel the rest of the posts and I reviewed each to ensure correct label.<!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+|Discussion|92|36.8%|
+|request|79|31.6%|
+|showcase|79|31.6%|
+| **Total** |250| 100% |
 
 **Three hard cases**
 
@@ -205,25 +189,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:“Why/What got you into Brawlhalla? And why are you still playing it? No like seriously, we all enjoy the game but like all competitive spaces we hate it too. Let me start: Why/what got me into Brawlhalla? Reno. Why do I still play? Honestly I barely do...”*
 >
-> *Could have been:*
+> *Could have been: Request*
 >
-> *I chose, because:*
+> *I chose, because: Discussion, because even though the poster is asking questions, its mainly opening a conversation while giving their opinion. There isn't an actual problem or request they're making but more of a conversational strategy to start an open ended discussion.*
 
 **2.**
-> *The post:*
+> *The post: "Replay Analysis, Platinum (1800+)"*
 >
-> *Could have been:*
+> *Could have been: showcase*
 >
-> *I chose, because:*
+> *I chose, because: Request, because at first glance it looks like someone showcasing their plat gameplay, but contextually a when someone post a video with the caption replay analysis, they're asking the community to review the gameplay with falls under the request label.*
 
 **3.**
-> *The post:*
+> *The post:“Win Triple A Games if you win a Brawlhalla match! Challenge LIVE on my channel. Going LIVE on my YouTube channel to host a Brawlhalla challenge with 1v1 matches. Winners get Triple A Steam games! Make sure to enter your name on the site.”*
 >
-> *Could have been:*
+> *Could have been: request*
 >
-> *I chose, because:*
+> *I chose, because: Showcase, because the post asks people to enter their challenge, but the primary purpose of this post is to showcase and promote the creators event/content, rather then needing the community to solve or answer something.*
 
 ---
 
@@ -231,13 +215,14 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model: distilbert-base-uncased**
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
 
-**Anything I changed from the defaults, and why:**
+**Settings:Epochs: 3, Learning rate: 2e-5, Batch size: 16, Maximum sequence length: 128, Seed: 42** <!-- epochs, learning rate, batch size, seed -->
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
+**Anything I changed from the defaults, and why: I kept the provided training hyperparameters unchanged so I could establish a clean first result without tuning the model based on the test set.**
+
+**Split sizes: Train: 174, Val: 38, Test: 38. discussion: 14, request: 12, showcase: 12** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
 
@@ -256,15 +241,15 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:I used AI to help stress-test my original taxonomy and find cases where the label boundaries were unclear.*
+- *What came back:The biggest problem was the boundary between my original analysis and unsupported_opinion labels because the difference depended too much on how much evidence a post contained.*
+- *What I changed:Before training, I merged those two labels into discussion and rewrote the boundary around the primary purpose of the post instead.*
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for: After I cold labeled my first 21 posts, I used AI to pre-label the remaining posts using examples and definitions from my taxonomy.*
+- *What came back: The pre-labels gave me a faster starting point, but there were several ambiguous posts where I disagreed with the suggested label.*
+- *What I changed: I personally reviewed every pre labeled post and corrected labels when I thought the post's primary purpose fit another category. Some of those corrections became the hard cases documented above.*
 
 **Pre-labelling disclosure:**
 
@@ -282,19 +267,22 @@ of next unit's variance. -->
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.553 | 0.658 | +0.105 |
+| Macro F1 | 0.513 | 0.608 | +0.096 |
+| F1 — `discussion` | 0.667 | 0.718 | +0.051 |
+| F1 — `request` | 0.585 | 0.250 | -0.335 |
+| F1 — `showcase` | 0.286 | 0.857 | +0.571 |
+
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+     I predicted that the trained model would do better then the baseline model especially in the showcase where alot of the posts share a pattern in titling for showcasing clips and the like.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
+     The trained model did better, especially in the showcase label, slightly better in the discussion label. However the request label's F1 dropped significantly from 0.585 to 0.250. The trained model failed to identify the request posts roughly more then twice as much as the baseline.
 
 
 ---
