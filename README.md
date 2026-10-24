@@ -251,7 +251,7 @@ of next unit's variance. -->
 - *What came back: The pre-labels gave me a faster starting point, but there were several ambiguous posts where I disagreed with the suggested label.*
 - *What I changed: I personally reviewed every pre labeled post and corrected labels when I thought the post's primary purpose fit another category. Some of those corrections became the hard cases documented above.*
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure: I cold labeled 21 posts without AI assistance. AI pre-labeled the remaining 229 posts, but I personally reviewed every one and corrected the labels I disagreed with before training the model.**
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
