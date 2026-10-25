@@ -412,21 +412,23 @@ I agreed with the staff on 29 of 30 posts, or 97%. The only disagreement came fr
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:I added 30 additional request posts to the training dataset, focusing especially on requests that could be confused with discussion, such as posts that include complaints, opinions, context, or conversational questions but still contain a genuine unresolved need.**
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:request was the weakest label in all three original runs, with F1 scores of 0.250, 0.154, and 0.154. The original confusion matrix also showed 10 of 12 real request posts being predicted as discussion, with no errors in the opposite direction. My 97% staff agreement gave little evidence of a broad labeling-consistency problem, so I gave the model more examples of the boundary it was failing to learn.**
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1.Overall accuracy|≥ 0.900|0.667|0.667|0.619|MISSED|
+|2. Every label F1|≥ 0.850|0.609|0.500|0.538|MISSED|
+|3. Largest label share|≤ 35%|38.9%|38.9%|38.9%|MISSED|
+|4. Agreement with another labeler|≥ 90%|96.7%|96.7%|96.7%|MET|
+|5. Most-confident third accuracy|≥ 0.950|0.857|0.929|0.714|MISSED|
 
-**Did it help, and how do I know:**
+
+
+**Did it help, and how do I know:Yes, but with a tradeoff. The improvement directly fixed the largest original failure. request F1 increased from 0.250, 0.154, and 0.154 before the change to 0.667, 0.682, and 0.538 afterward. Macro F1 improved in all three seeds, and the overall accuracy spread decreased from 0.105 to 0.048, making overall performance more stable across splits. However, the confusion matrix shows that the model overcorrected toward request: before the change, 10 real request posts were called discussion and none went the opposite direction; afterward only 2 requests were called discussion, but 7 real discussion posts and 5 real showcase posts were called request.**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
