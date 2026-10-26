@@ -251,6 +251,12 @@ of next unit's variance. -->
 - *What came back: The pre-labels gave me a faster starting point, but there were several ambiguous posts where I disagreed with the suggested label.*
 - *What I changed: I personally reviewed every pre labeled post and corrected labels when I thought the post's primary purpose fit another category. Some of those corrections became the hard cases documented above.*
 
+**Moment 3 (Unit 6)**
+
+- *What I asked for:I used AI to help compare my three-seed results, confusion matrix, and staff agreement results and identify patterns in the model's errors.*
+- *What came back:The strongest pattern was the onesided request versus discussion confusion, where the original Seed 42 model classified 10 real request posts as discussion and none in the opposite direction.*
+- *What I changed:I used that evidence to choose the targeted 30 post request improvement. I personally reviewed and labeled the additional posts before training, then used the results to determine whether the improvement actually helped.*
+
 **Pre-labelling disclosure: I cold labeled 21 posts without AI assistance. AI pre-labeled the remaining 229 posts, but I personally reviewed every one and corrected the labels I disagreed with before training the model.**
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
@@ -282,7 +288,7 @@ of next unit's variance. -->
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-     The trained model did better, especially in the showcase label, slightly better in the discussion label. However the request label's F1 dropped significantly from 0.585 to 0.250. The trained model failed to identify the request posts roughly more then twice as much as the baseline.
+     The trained model did better, especially in the showcase label, slightly better in the discussion label. However the request label's F1 dropped significantly from 0.585 to 0.250. The fine-tuned model's performance worsened roughly more then twice as much as the baseline.
 
 
 ---
@@ -348,7 +354,7 @@ of next unit's variance. -->
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
-     *Criterion 1 — Overall accuracy:**  
+**Criterion 1 — Overall accuracy:**  
 The biggest cause of the accuracy miss appears to be the model's failure to learn the request versus discussion boundary. In Seed 42, 10 of 12 real request posts were predicted as discussion, while none of the 14 real discussion posts were predicted as request. Accuracy also changed by 0.105 between seeds, which suggests the dataset is small enough for the particular train/test split to have a meaningful effect on performance.
 
 **Criterion 2 — Every label F1:**  
@@ -432,21 +438,54 @@ I agreed with the staff on 29 of 30 posts, or 97%. The only disagreement came fr
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
+### Stretch: Second Improvement
+
+**What I changed:I kept the same 280-post dataset and changed training to use class-weighted cross-entropy loss.** 
+
+**Why I chose it:The first improvement fixed the original under prediction of request, but shifted the model too far toward predicting request. Class weighting tested whether I could reduce that bias without removing the added examples.**
+
+### Run Log — After2
+| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+|---|---|---|---|---|---|
+| 1. Overall accuracy | ≥ 0.900 | 0.762 | 0.738 | 0.500 | MISSED |
+| 2. Every label F1 | ≥ 0.850 | 0.667 | 0.688 | 0.111 | MISSED |
+| 3. Largest label share | ≤ 35% | 38.9% | 38.9% | 38.9% | MISSED |
+| 4. Agreement with another labeler | ≥ 90% | 96.7% | 96.7% | 96.7% | MET |
+| 5. Most-confident third accuracy | ≥ 0.950 | 0.929 | 0.857 | 0.643 | MISSED |
 
 
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.762 | 0.738 | 0.500 | 0.262 |
+| Macro F1 | 0.766 | 0.733 | 0.442 | 0.324 |
+| F1 — request | 0.667 | 0.688 | 0.111 | 0.576 |
+| F1 — discussion | 0.812 | 0.812 | 0.600 | 0.213 |
+| F1 — showcase | 0.818 | 0.700 | 0.615 | 0.203 |
+| Most-confident third accuracy | 0.929 | 0.857 | 0.643 | 0.286 |
 
 ---
 
 ## What's Still Broken
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
+**Criterion 1 — Overall accuracy:**  
+Overall accuracy still missed the 0.900 target, reaching 0.667, 0.667, and 0.619 after the improvement. If I continued, I would expand the dataset from 280 to 350 posts by adding 40 showcase and 30 discussion examples, focusing specifically on difficult boundary cases rather than obvious examples. The first improvement showed that targeted data can substantially change what the model learns, but also showed that adding examples to only one class can push the boundary too far in that direction. 
 
+**Criterion 2 — Every label F1:**  
+Every label still did not reach an F1 of 0.850 across all three seeds. I would use the additional discussion and showcase posts as hard negatives: discussion posts that contain questions but mainly invite debate, and showcase posts that contain requests for feedback or participation but primarily exist to share content. This would give the model examples where surface wording points toward the wrong label and force it to learn the primary purpose of the post more consistently.
+
+**Criterion 3 — Dataset balance:**  
+After adding 30 request examples, request became 109 of 280 posts, or 38.9%, so this criterion is still missed. Adding 30 discussion and 40 showcase posts would produce 350 total posts: 109 request (31.1%), 122 discussion (34.9%), and 119 showcase (34.0%). That would put all three labels below my 35% target without deleting any of the useful request examples.
+
+
+**Criterion 5 — Confidence:**  
+The most confident third still reached only 0.857, 0.929, and 0.714 instead of the required 0.950. Before adding more data, I would inspect the model's high confidence but wrong predictions and look for repeated patterns that make it confidently choose the wrong label. I would then deliberately add counterexamples for those patterns to the expanded dataset. The improved model's most confident predictions were more accurate than its least confident predictions in every seed, so confidence contains useful information, but it is not yet reliable enough to meet my target.
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
+The labels were meant to capture the primary purpose of the post, whether it was to start/foster a discussion, make a request of some kind, or showcase some type of content. The model seemed to learn surface patterns pertaining to each label, before any improvements it classified many request posts as discussion but after adding more request posts, that failure disappered but then some discussion and showcase posts were being classfied as request posts.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════

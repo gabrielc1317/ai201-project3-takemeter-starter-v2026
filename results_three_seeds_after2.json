@@ -1,0 +1,164 @@
+[
+  {
+    "seed": 42,
+    "n_test": 42,
+    "accuracy": 0.7619047619047619,
+    "f1_macro": 0.7657828282828283,
+    "per_label": {
+      "request": {
+        "precision": 0.7142857142857143,
+        "recall": 0.625,
+        "f1": 0.6666666666666666,
+        "support": 16
+      },
+      "discussion": {
+        "precision": 0.7222222222222222,
+        "recall": 0.9285714285714286,
+        "f1": 0.8125,
+        "support": 14
+      },
+      "showcase": {
+        "precision": 0.9,
+        "recall": 0.75,
+        "f1": 0.8181818181818182,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "request": {
+        "request": 10,
+        "discussion": 5,
+        "showcase": 1
+      },
+      "discussion": {
+        "request": 1,
+        "discussion": 13,
+        "showcase": 0
+      },
+      "showcase": {
+        "request": 3,
+        "discussion": 0,
+        "showcase": 9
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.4575836956501007,
+      "mean_when_wrong": 0.4182700216770172,
+      "accuracy_most_confident_third": 0.9285714285714286,
+      "accuracy_least_confident_third": 0.5714285714285714,
+      "n_per_third": 14
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce GTX 1660 SUPER",
+    "torch_version": "2.14.1+cu130",
+    "max_length": 128
+  },
+  {
+    "seed": 7,
+    "n_test": 42,
+    "accuracy": 0.7380952380952381,
+    "f1_macro": 0.7333333333333334,
+    "per_label": {
+      "request": {
+        "precision": 0.6875,
+        "recall": 0.6875,
+        "f1": 0.6875,
+        "support": 16
+      },
+      "discussion": {
+        "precision": 0.7222222222222222,
+        "recall": 0.9285714285714286,
+        "f1": 0.8125,
+        "support": 14
+      },
+      "showcase": {
+        "precision": 0.875,
+        "recall": 0.5833333333333334,
+        "f1": 0.7,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "request": {
+        "request": 11,
+        "discussion": 4,
+        "showcase": 1
+      },
+      "discussion": {
+        "request": 1,
+        "discussion": 13,
+        "showcase": 0
+      },
+      "showcase": {
+        "request": 4,
+        "discussion": 1,
+        "showcase": 7
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.43883177638053894,
+      "mean_when_wrong": 0.3992295265197754,
+      "accuracy_most_confident_third": 0.8571428571428571,
+      "accuracy_least_confident_third": 0.5714285714285714,
+      "n_per_third": 14
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce GTX 1660 SUPER",
+    "torch_version": "2.14.1+cu130",
+    "max_length": 128
+  },
+  {
+    "seed": 2024,
+    "n_test": 42,
+    "accuracy": 0.5,
+    "f1_macro": 0.44216524216524217,
+    "per_label": {
+      "request": {
+        "precision": 0.5,
+        "recall": 0.0625,
+        "f1": 0.1111111111111111,
+        "support": 16
+      },
+      "discussion": {
+        "precision": 0.46153846153846156,
+        "recall": 0.8571428571428571,
+        "f1": 0.6,
+        "support": 14
+      },
+      "showcase": {
+        "precision": 0.5714285714285714,
+        "recall": 0.6666666666666666,
+        "f1": 0.6153846153846154,
+        "support": 12
+      }
+    },
+    "confusion": {
+      "request": {
+        "request": 1,
+        "discussion": 11,
+        "showcase": 4
+      },
+      "discussion": {
+        "request": 0,
+        "discussion": 12,
+        "showcase": 2
+      },
+      "showcase": {
+        "request": 1,
+        "discussion": 3,
+        "showcase": 8
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.4778653681278229,
+      "mean_when_wrong": 0.4439243972301483,
+      "accuracy_most_confident_third": 0.6428571428571429,
+      "accuracy_least_confident_third": 0.2857142857142857,
+      "n_per_third": 14
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce GTX 1660 SUPER",
+    "torch_version": "2.14.1+cu130",
+    "max_length": 128
+  }
+]
